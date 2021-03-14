@@ -15,8 +15,7 @@ from tensorflow.keras.applications import EfficientNetB0
 from tensorflow.python import keras as keras
 from tensorflow.python.keras.callbacks import LearningRateScheduler
 from tensorflow.keras.preprocessing import image
-from tensorflow.keras.applications import imagenet_utils
-from tensorflow.keras.models import Model
+
 
 # Avoid greedy memory allocation to allow shared GPU usage
 gpus = tf.config.experimental.list_physical_devices('GPU')
