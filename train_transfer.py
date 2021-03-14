@@ -25,7 +25,7 @@ LOG_DIR = 'logs'
 BATCH_SIZE = 64
 NUM_CLASSES = 20
 RESIZE_TO = 224
-TRAIN_SIZE = 12191
+TRAIN_SIZE = 12786
 
 
 def parse_proto_example(proto):
