@@ -14,6 +14,7 @@ import time
 from tensorflow.keras.applications import EfficientNetB0
 from tensorflow.python import keras as keras
 from tensorflow.python.keras.callbacks import LearningRateScheduler
+from tensorflow.keras.models import Sequential
 
 # Avoid greedy memory allocation to allow shared GPU usage
 gpus = tf.config.experimental.list_physical_devices('GPU')
@@ -26,6 +27,7 @@ BATCH_SIZE = 64
 NUM_CLASSES = 20
 RESIZE_TO = 224
 TRAIN_SIZE = 12786
+
 img_augmentation = Sequential(
     [
         preprocessing.RandomRotation(factor=0.15),
