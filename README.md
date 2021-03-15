@@ -42,7 +42,8 @@ return tf.keras.Model(inputs=inputs, outputs=outputs)
 
 ## 1)Структура
 Изменил learning_rate с 0.001 на 0.0001
-```
+Произошли изменения в структуре модели: 
+```python
   inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
   model = EfficientNetB0(include_top=False,weights="imagenet")(inputs)
   model.trainable=False
