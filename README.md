@@ -15,3 +15,6 @@
 Функция потерь
 
 ![loss_1](https://github.com/EugenTrifonov/lab_2/blob/main/graphs/epoch_loss_2.svg)
+# С использованием техники обучения Transfer Learning  обучить нейронную сеть EfficientNet-B0 (предобученную на базе изображений imagenet)
+## 1)Структура
+## 2)Графики
