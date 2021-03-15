@@ -38,7 +38,17 @@ return tf.keras.Model(inputs=inputs, outputs=outputs)
 ![loss_2](https://github.com/EugenTrifonov/lab_2/blob/main/graphs/epoch_loss_2.svg)
 
 ## Попытка 2
-Поскольку в первом случае результат был неудовлетворительным, было принято решение адаптировать код с https://keras.io/examples/vision/image_classification_efficientnet_fine_tuning/  
+Поскольку в первом случае результат был неудовлетворительным, было принято решение адаптировать код с https://keras.io/examples/vision/image_classification_efficientnet_fine_tuning/
+Код программы содержится в файле train_new.py
 ## 1)Структура
-Файл https://github.com/EugenTrifonov/lab_2/blob/main/train_new.py
+```python
+inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
+model = EfficientNetB0(include_top=False,input_tensor=inputs, weights="imagenet")
+model.trainable=False
+x = tf.keras.layers.GlobalAveragePooling2D()(model.output)
+outputs = tf.keras.layers.Dense(NUM_CLASSES, activation=tf.keras.activations.softmax)(x)
+return tf.keras.Model(inputs=inputs, outputs=outputs)
+```
 ## 2)Графики
+# Анализ результатов
+Было произведено две реализации Transfer Learning. В результате первой реализации результаты получились неудовлетворительными(точность около 10%). Было принято решение адаптировать код с Keras.io. При этом результат получился гораздо лучше. Т.к структура модели не поменялась, а результаты значительно разнятся можно сделать вывод, что проблема ,скорее всего, в представлении данных.
