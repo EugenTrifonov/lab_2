@@ -60,9 +60,9 @@ def create_dataset(filenames, batch_size):
 
 def build_model():
   inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
-  x = EfficientNetB0(include_top=False,input_tensor=x,weights="imagenet")
-  x.trainable=False
-  x = tf.keras.layers.GlobalAveragePooling2D()(x.output)
+  model = EfficientNetB0(include_top=False,input_tensor=x,weights="imagenet")
+  model.trainable=False
+  x = tf.keras.layers.GlobalAveragePooling2D()(model.output)
   outputs = tf.keras.layers.Dense(NUM_CLASSES)(x)
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 
@@ -80,7 +80,7 @@ def main():
   model = build_model()
 
   model.compile(
-    optimizer=tf.optimizers.Adam(lr=0.001),
+    optimizer=tf.optimizers.Adam(lr=0.0001),
     loss=tf.keras.losses.categorical_crossentropy,
     metrics=[tf.keras.metrics.categorical_accuracy],
   )
