@@ -33,7 +33,7 @@ data_augmentation = tf.keras.Sequential([
   tf.keras.layers.experimental.preprocessing.RandomFlip('horizontal'),
   tf.keras.layers.experimental.preprocessing.RandomRotation(0.2),
 ])
-preprocess_input = tf.keras.applications.EfficientNetB0.preprocess_input
+preprocess_input = tf.keras.applications.efficientnet.preprocess_input
 
 def parse_proto_example(proto):
   keys_to_features = {
