@@ -41,7 +41,15 @@ return tf.keras.Model(inputs=inputs, outputs=outputs)
 ## Попытка 2
 
 ## 1)Структура
-
+Изменил learning_rate с 0.001 на 0.0001
+```
+  inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
+  model = EfficientNetB0(include_top=False,weights="imagenet")(inputs)
+  model.trainable=False
+  x = tf.keras.layers.GlobalAveragePooling2D()(model)
+  outputs = tf.keras.layers.Dense(NUM_CLASSES,activation=tf.keras.activations.softmax)(x)
+  return tf.keras.Model(inputs=inputs, outputs=outputs)
+```
 ## 2)Графики
 ![legend](https://user-images.githubusercontent.com/80068414/111124753-ea1d5b80-8581-11eb-8f4e-7cbae7714e62.png)
 
