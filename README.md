@@ -26,3 +26,12 @@ outputs = tf.keras.layers.Dense(NUM_CLASSES, activation=tf.keras.activations.sof
 return tf.keras.Model(inputs=inputs, outputs=outputs)
 ```
 ## 2)Графики
+![legend](https://user-images.githubusercontent.com/80068414/111124753-ea1d5b80-8581-11eb-8f4e-7cbae7714e62.png)
+
+Метрика качества
+
+![acc_2](https://github.com/EugenTrifonov/lab_2/blob/main/graphs/epoch_categorical_accuracy_2.svg)
+
+Функция потерь
+
+![loss_2](https://github.com/EugenTrifonov/lab_2/blob/main/graphs/epoch_loss_2.svg)
