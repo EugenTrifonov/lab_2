@@ -35,3 +35,5 @@ return tf.keras.Model(inputs=inputs, outputs=outputs)
 Функция потерь
 
 ![loss_2](https://github.com/EugenTrifonov/lab_2/blob/main/graphs/epoch_loss_2.svg)
+
+# 3.Анализ результатов
