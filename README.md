@@ -7,6 +7,10 @@
 ```
 ## 2)Графики
 
+Метрика качества
+
 ![acc_1](https://github.com/EugenTrifonov/lab_2/blob/main/graphs/epoch_categorical_accuracy_1.svg)
+
+Функция потерь
 
 ![loss_1](https://github.com/EugenTrifonov/lab_2/blob/main/graphs/epoch_loss_2.svg)
