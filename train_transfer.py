@@ -63,7 +63,7 @@ def build_model():
   inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
   model = EfficientNetB0(include_top=False,input_tensor=inputs,pooling='max', weights="imagenet")
   model.trainable=False
-  outputs = tf.keras.layers.Dense(NUM_CLASSES, activation=tf.keras.activations.relu)(model.output)
+  outputs = tf.keras.layers.Dense(NUM_CLASSES, activation=tf.keras.activations.softmax)(model.output)
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 
 
