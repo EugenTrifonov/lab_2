@@ -29,12 +29,6 @@ NUM_CLASSES = 20
 RESIZE_TO = 224
 TRAIN_SIZE = 12786
 
-data_augmentation = tf.keras.Sequential([
-  tf.keras.layers.experimental.preprocessing.RandomFlip('horizontal'),
-  tf.keras.layers.experimental.preprocessing.RandomRotation(0.2),
-])
-preprocess_input = tf.keras.applications.efficientnet.preprocess_input
-rescale = tf.keras.layers.experimental.preprocessing.Rescaling(1./127.5, offset= -1)
 def parse_proto_example(proto):
   keys_to_features = {
     'image/encoded': tf.io.FixedLenFeature((), tf.string, default_value=''),
@@ -66,9 +60,6 @@ def create_dataset(filenames, batch_size):
 
 def build_model():
   inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
-  x = data_augmentation(inputs)
-  x= rescale(x)
-  x = preprocess_input(x)
   x = EfficientNetB0(include_top=False,input_tensor=x,weights="imagenet")
   x.trainable=False
   x = tf.keras.layers.GlobalAveragePooling2D()(x.output)
