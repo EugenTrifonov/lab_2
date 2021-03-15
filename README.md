@@ -17,6 +17,7 @@
 ![loss_1](https://github.com/EugenTrifonov/lab_2/blob/main/graphs/epoch_loss_1.svg)
 # 2.С использованием техники обучения Transfer Learning  обучить нейронную сеть EfficientNet-B0 (предобученную на базе изображений imagenet)
 ## Попытка 1
+Файл train_transfer.py
 ## 1)Структура
 ```python
 inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
