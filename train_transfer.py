@@ -11,7 +11,6 @@ import glob
 import numpy as np
 import tensorflow as tf
 import time
-import tensorflow.keras.applications
 from tensorflow.keras.applications import EfficientNetB0
 from tensorflow.python import keras as keras
 from tensorflow.python.keras.callbacks import LearningRateScheduler
