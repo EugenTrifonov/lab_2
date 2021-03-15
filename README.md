@@ -40,5 +40,5 @@ return tf.keras.Model(inputs=inputs, outputs=outputs)
 ## Попытка 2
 Поскольку в первом случае результат был неудовлетворительным, было принято решение адаптировать код с https://keras.io/examples/vision/image_classification_efficientnet_fine_tuning/  
 ## 1)Структура
-Файл 
+Файл https://github.com/EugenTrifonov/lab_2/blob/main/train_new.py
 ## 2)Графики
