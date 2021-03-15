@@ -6,6 +6,7 @@
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 ```
 ## 2)Графики
+![legend](https://user-images.githubusercontent.com/80068414/111124753-ea1d5b80-8581-11eb-8f4e-7cbae7714e62.png)
 
 Метрика качества
 
