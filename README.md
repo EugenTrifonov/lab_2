@@ -16,6 +16,7 @@
 
 ![loss_1](https://github.com/EugenTrifonov/lab_2/blob/main/graphs/epoch_loss_1.svg)
 # 2.С использованием техники обучения Transfer Learning  обучить нейронную сеть EfficientNet-B0 (предобученную на базе изображений imagenet)
+## Попытка 1
 ## 1)Структура
 ```python
 inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
@@ -36,4 +37,8 @@ return tf.keras.Model(inputs=inputs, outputs=outputs)
 
 ![loss_2](https://github.com/EugenTrifonov/lab_2/blob/main/graphs/epoch_loss_2.svg)
 
-# 3.Анализ результатов
+## Попытка 2
+Поскольку в первом случае результат был неудовлетворительным, было принято решение адаптировать код с https://keras.io/examples/vision/image_classification_efficientnet_fine_tuning/  
+## 1)Структура
+Файл 
+## 2)Графики
