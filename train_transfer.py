@@ -29,6 +29,11 @@ NUM_CLASSES = 20
 RESIZE_TO = 224
 TRAIN_SIZE = 12786
 
+data_augmentation = tf.keras.Sequential([
+  tf.keras.layers.experimental.preprocessing.RandomFlip('horizontal'),
+  tf.keras.layers.experimental.preprocessing.RandomRotation(0.2),
+])
+preprocess_input = tf.keras.applications.EfficientNetB0.preprocess_input
 
 def parse_proto_example(proto):
   keys_to_features = {
@@ -61,10 +66,12 @@ def create_dataset(filenames, batch_size):
 
 def build_model():
   inputs = tf.keras.Input(shape=(RESIZE_TO, RESIZE_TO, 3))
-  model = EfficientNetB0(include_top=False,input_tensor=inputs,weights="imagenet")
-  model.trainable=False
+  x = data_augmentation(inputs)
+  x = preprocess_input(x)
+  x = EfficientNetB0(include_top=False,input_tensor=x,weights="imagenet")
+  x.trainable=False
   x = tf.keras.layers.GlobalAveragePooling2D()(model.output)
-  outputs = tf.keras.layers.Dense(NUM_CLASSES)(x)
+  outputs = tf.keras.layers.Dense(NUM_CLASSES,activation=tf.keras.activations.softmax)(x)
   return tf.keras.Model(inputs=inputs, outputs=outputs)
 
 
